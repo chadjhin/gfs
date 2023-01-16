@@ -1,0 +1,86 @@
+object(stdClass)#2 (13) 
+{ 
+    ["status"]=> string(6) "ACTIVE" 
+    ["status_update_time"]=> string(20) "2022-09-18T03:34:30Z" 
+    ["id"]=> string(14) "I-281B3WLDX3LB" 
+    ["plan_id"]=> string(26) "P-8NX53603PP598194YMMSUIDQ" 
+    ["start_time"]=> string(20) "2022-09-18T03:33:40Z" 
+    ["quantity"]=> string(1) "1" 
+
+    ["shipping_amount"]=> object(stdClass)#3 (2)  333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+    { 
+        ["currency_code"]=> string(3) "USD" 
+        ["value"]=> string(3) "0.0" 
+    } 
+
+
+    
+
+
+["billing_info"]=> object(stdClass)#9 (6) 333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+{ 
+    ["outstanding_balance"]=> object(stdClass)#8 (2) 333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333 
+    { 
+        ["currency_code"]=> string(3) "USD" 
+        ["value"]=> string(3) "0.0" 
+    } 
+    ["cycle_executions"]=> array(2) 
+    {
+        [0]=> object(stdClass)#10 (6)  3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+        { 
+            ["tenure_type"]=> string(5) "TRIAL" 
+            ["sequence"]=> int(1) 
+            ["cycles_completed"]=> int(0) 
+            ["cycles_remaining"]=> int(1) 
+            ["current_pricing_scheme_version"]=> int(1)
+
+                ["total_cycles"]=> int(1) } [1]=> object(stdClass)#11 (6) 
+                { 
+                    ["tenure_type"]=> string(7) "REGULAR" 
+                    ["sequence"]=> int(2) ["cycles_completed"]=> int(0) 
+                    ["cycles_remaining"]=> int(12) 
+                    ["current_pricing_scheme_version"]=> int(1) 
+                    ["total_cycles"]=> int(12) 
+                } 
+        } 
+
+
+        ["last_payment"]=> object(stdClass)#13 (2)
+        { 
+                ["amount"]=> object(stdClass)#12 (2) 
+            { 
+                ["currency_code"]=> string(3) "USD" 
+                ["value"]=> string(4) "10.0" 
+            } 
+            ["time"]=> string(20) "2022-09-18T03:34:29Z"
+        } 
+            ["next_billing_time"]=> string(20) "2022-09-18T03:34:29Z" 
+            ["final_payment_time"]=> string(20) "2023-08-24T10:00:00Z" 
+            ["failed_payments_count"]=> int(0)
+    } 
+
+    ["create_time"]=> string(20) "2022-09-18T03:34:29Z" 
+    ["update_time"]=> string(20) "2022-09-18T03:34:30Z" 
+    ["plan_overridden"]=> bool(false) 
+        ["links"]=> array(5) 
+        { 
+            [0]=> object(stdClass)#14 (3) 
+            { 
+                ["href"]=> string(77) "https://api.sandbox.paypal.com/v1/billing/subscriptions/I-281B3WLDX3LB/cancel"
+                ["rel"]=> string(6) "cancel" 
+                ["method"]=> string(4) "POST"
+            } 
+         [1]=> object(stdClass)#15 (3) 
+            { 
+                ["href"]=> string(70) "https://api.sandbox.paypal.com/v1/billing/subscriptions/I-281B3WLDX3LB" 
+                ["rel"]=> string(4) "edit" ["method"]=> string(5) "PATCH" } [2]=> object(stdClass)#16 (3) { 
+                ["href"]=> string(70) "https://api.sandbox.paypal.com/v1/billing/subscriptions/I-281B3WLDX3LB" 
+                ["rel"]=> string(4) "self" ["method"]=> string(3) "GET" } [3]=> object(stdClass)#17 (3) { 
+                ["href"]=> string(78) "https://api.sandbox.paypal.com/v1/billing/subscriptions/I-281B3WLDX3LB/suspend" 
+                ["rel"]=> string(7) "suspend" ["method"]=> string(4) "POST" } [4]=> object(stdClass)#18 (3) { 
+                ["href"]=> string(78) "https://api.sandbox.paypal.com/v1/billing/subscriptions/I-281B3WLDX3LB/capture" 
+                ["rel"]=> string(7) "capture" ["method"]=> string(4) "POST" 
+            } 
+        } 
+
+}

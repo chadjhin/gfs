@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Demo</title>
+		<script src="./x-notify.js"></script>
+		<style>
+			body {
+				margin:0;
+			}
+			.wrapper {
+				height:calc((40px * 4) + (20px * 3));
+				width:180px;
+				position:absolute;
+				top:calc(50% - (40px * 4) + (20px * 3) / 2);
+				left:calc(50% - 180px / 2)
+			}
+			.wrapper button {
+				background:rgb(0,150,255);
+				border:none;
+				outline:none;
+				cursor:pointer;
+				padding:0 10px 0 10px;
+				height:40px;
+				width:180px;
+				font-size:18px;
+				font-weight:bold;
+				color:rgb(255,255,255);
+				border-radius:10px;
+				display:block;
+				margin:0 auto 20px auto;
+				transition:background 0.25s;
+			}
+			.wrapper button:hover {
+				background:rgb(0,120,255);
+			}
+			.wrapper button:last-of-type {
+				margin-bottom:0;
+			}
+		</style>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const Notify = new XNotify();
+
+				let success = document.getElementById("success");
+				let error = document.getElementById("error");
+				let alert = document.getElementById("alert");
+				let info = document.getElementById("info");
+
+				success.addEventListener("click", () => {
+					Notify.success({ 
+						title: "A Successful Event", 
+						description: "The description of a successful event.", 
+						duration: 4000
+					});
+				});
+
+				error.addEventListener("click", () => {
+					Notify.error({
+						title: "Some Error",
+						description: "Description of said error.",
+						duration: 4000
+					});
+				});
+
+				alert.addEventListener("click", () => {
+					Notify.alert({
+						title: "Just a Warning",
+						description: "Description of the alert or warning.",
+						duration: 4000
+					});
+				});
+
+				info.addEventListener("click", () => {
+					Notify.info({
+						title: "Just Some Info",
+						description: "Longer version of the information.",
+						duration: 4000
+					});
+				});
+
+				custom.addEventListener("click", () => {
+					Notify.info({
+						width: "300px",
+						borderRadius: "4px",
+						title: "Customized Notification",
+						description: "Description of the notification.",
+						duration: 10000,
+						background: "rgb(0,0,30)",
+						color: "rgb(0,200,255)"
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<button id="success">Success</button>
+			<button id="error">Error</button>
+			<button id="alert">Alert</button>
+			<button id="info">Info</button>
+			<button id="custom">Custom</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,9 @@
+{
+    "require": {
+        "google/cloud": "^0.185.0",
+        "grpc/grpc": "1.42",
+        "google/protobuf": "3.17",
+        "google/cloud-firestore": "*",
+        "phpmailer/phpmailer": "^6.7"
+    }
+}
