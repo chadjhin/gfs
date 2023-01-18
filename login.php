@@ -1,86 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    PETik CAPSTONE PROJECT
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  
+
+</head>
+
+<body class="user-profile">
+  
 <?php
+  error_reporting(E_ALL);
+ini_set('display_errors', 1);
+   echo("!empty1");
+  
+//define('__ROOT__', dirname(dirname(__FILE__)));echo("!empty2");
+//require(__ROOT__.'/public_html/vendor/autoload.php');echo("!empty3");
 
-//use Google\Cloud\Firestore\FirestoreClient;
-/*require_once 'firestore.php';
-
-$fs = new firestore(collection:'admin');
-//$fs = new firestore(collection:'food'); // drop new doc food
-
-
-//print_r($fs->getDocument(name: '3yBsyU7BYV4APf0vR4oD'));
-//print_r($fs->newDocument('3yBsyU7BYV4APf0vR4oD',['adminpass' => 'admin12345']));
-//$fs->getWhere(field: 'adminpass', operator: '=', value: 'admin123');
-//print_r($fs->newUserCollection(name:'food', doc_name: 'meat'));
-//print_r($fs->dropDocument(name:'meat'));
-//print_r($fs->dropCollection(name: 'food'));
-
-if(!empty($_POST)) 
-{
-
-	$user = $_POST['text'];
-	$pass = $_POST['pass'];
-
-	if(empty($user) || empty($pass)) {
-		header("Location: index.php?error=emptyfields");
-		exit();
-	}
-	else{
-		$fs->getWhere('adminpass', '=',  $pass,  'adminuser',  '=', $user);
-	}
-
+define('__ROOT__', dirname(dirname(__FILE__))); echo("!empty2");
+//require(__ROOT__.'/public_html/vendor/autoload.php');echo("!empty3");
+  //require_once dirname(__DIR__) . '/autoload.php'; echo("!empty3");//require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+ echo("!empty3");
+  $filepath = $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'; echo("!empty4");
+if(file_exists($filepath))
+{echo("!empty5");
+    include $filepath;
+    echo("!empty3");
+} else {
+    echo "Autoload file not found";
 }
-else{
-	header("Location: index.php");
-	exit();
-}
-*/
 
-//use Google\Cloud\Firestore\FirestoreClient;
-//require_once 'firestore.php';
-session_start();
-define('__ROOT__', dirname(dirname(__FILE__)));
-require(__ROOT__.'/gfs/vendor/autoload.php');
-require(__ROOT__.'/gfs/firestore.php');
-use Google\Cloud\Firestore\FirestoreClient;
+//require_once 'vendor/autoload.php';echo("!empty3");
+use Google\Cloud\Firestore\FirestoreClient;echo("!empty4");
 
 $db = new FirestoreClient([
         'projectId' => 'petik-357402'
     ]);
-//$fs = new firestore(collection:'admin');
-//$fs = new firestore(collection:'food'); // drop new doc food
-
-
-
-
-//print_r($fs->getDocument(name: '3yBsyU7BYV4APf0vR4oD'));
-//print_r($fs->newDocument('3yBsyU7BYV4APf0vR4oD',['adminpass' => 'admin12345']));
-//$fs->getWhere(field: 'adminpass', operator: '=', value: 'admin123');
-//print_r($fs->newUserCollection(name:'food', doc_name: 'meat'));
-//print_r($fs->dropDocument(name:'meat'));
-//print_r($fs->dropCollection(name: 'food'));
-
+$fs = $db->collection('admin');
+ echo("!emptyasasdasdasdas");
 if(!empty($_POST)) 
 {
 
+     echo("!empty");
 	$user = $_POST['text'];
 	$pass = $_POST['pass'];
 
 	if(empty($user) || empty($pass)) {
 		header("Location: index.php?error=emptyfields");
-		exit();
+      
+     echo("emptyfields");
+		//exit();
 	}
 	else{
-		//$fs->getWhere('adminpass', '=',  $pass,  'adminuser',  '=', $user);
-       //$arr = [];
                 $query = $db->collection('admin')->where('adminpass', '=',  $pass,  'adminuser',  '=', $use);
             if(!empty($query))
             {
                 
-                //$_SESSION['admin_id'] = $this->db->collection($this->name)->document('3yBsyU7BYV4APf0vR4oD')->snapshot()->id(); //need this to set the seesion to each user (3yBsyU7BYV4APf0vR4oD is the admin document- need to make function if want to access other users)
-                //$_SESSION['admin_id'] = true;
                 $_SESSION['admin_id'] = '3yBsyU7BYV4APf0vR4oD'; //need this to set the seesion to each user (3yBsyU7BYV4APf0vR4oD is the admin document- need to make function if want to access other users)
                 
-
+echo("!empty($query)");
     
                 /*foreach ($query as $item)
                 {
@@ -108,6 +93,10 @@ if(!empty($_POST))
 
 }
 else{
-	header("Location: index.php");
-	exit();
+echo("error");
 }
+?>
+  
+  </body>
+</html>
+
